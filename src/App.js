@@ -4,7 +4,7 @@ import "react-router";
 import {
   BrowserRouter,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom'
 
 
@@ -15,9 +15,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <ul className="heading-nav">
-              <li className="heading-nav-entry"><Link to="/">Home</Link></li>
-              <li className="heading-nav-entry"><Link to="/users">Users</Link></li>
-              <li className="heading-nav-entry"><Link to="/todos">Todos</Link></li>
+              <li className="heading-nav-entry"><NavLink exact to="/" activeClassName="active" activeStyle={{padding: '5px', backgroundColor: 'lightgrey', borderRadius: '5px'}}>Home</NavLink></li>
+              <li className="heading-nav-entry"><NavLink exact to="/users" activeClassName="active" activeStyle={{ padding: '5px', backgroundColor: 'lightgrey', borderRadius: '5px'}}>Users</NavLink></li>
+              <li className="heading-nav-entry"><NavLink exact to="/todos" activeClassName="active" activeStyle={{ padding: '5px', backgroundColor: 'lightgrey', borderRadius: '5px'}}>Todos</NavLink></li>
             </ul>
             <Route exact path="/" component={Home} />
             <Route path="/users" component={Users} />
@@ -41,15 +41,15 @@ class Home extends Component {
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
-          <div class="row">
-            <div class="small-5 columns">&nbsp;</div>
-            <div class="small-2 columns">
+        <div class="row">
+          <div class="small-5 columns">&nbsp;</div>
+          <div class="small-2 columns">
             <div class="card text-center">
-              <h1>Users<br/>and<br/> Todos</h1>
-        </div>
+              <h1>Users<br />and<br /> Todos</h1>
             </div>
-            <div class="small-5 columns">&nbsp;</div>
           </div>
+          <div class="small-5 columns">&nbsp;</div>
+        </div>
       </div>
     )
   }
